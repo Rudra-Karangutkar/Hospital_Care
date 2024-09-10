@@ -15,337 +15,486 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: const Color.fromARGB(255, 254, 247, 255),
-        child: Column(
-          children: [
-            Container(
-              // App Bar Container
-              // color: Colors.blue,
-              height: 110,
-              width: MediaQuery.of(context).size.width,
-              child: AppBarMain(),
-            ),
-            Container(
-              // Body Container
-              child: Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Specialization(),
-                      RecommendedHospital(),
-                      MapNearbyHospital(),
-                    ],
+      body: Column(
+        children: [
+          // AppBar
+          Container(
+            height: 110,
+            width: MediaQuery.of(context).size.width,
+            child: AppBarMain(),
+          ),
+          // Remaining content like map and draggable sheet
+          Expanded(
+            child: Stack(
+              children: [
+                // Background Image (Map or Placeholder)
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey,
                   ),
                 ),
-              ),
-            ),
-            Container(// Nav Bar Container
-
+                // Map Text (or a map widget)
+                Positioned.fill(
+                  child: Center(
+                    child: Text(
+                      'Map or Map-like Text Here',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
-          ],
-        ),
+                // Swipe-up DraggableScrollableSheet
+                DragScrollingPage()
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 
+  // Custom AppBarMain Widget
   Widget AppBarMain() {
     return Container(
       margin: EdgeInsets.only(top: 20, right: 20),
       child: Row(
         children: [
           GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Profile()));
             },
             child: Container(
               margin: EdgeInsets.only(left: 20),
               child: CircleAvatar(
                 radius: 25,
                 backgroundColor: Colors.red,
-                backgroundImage:
-                    AssetImage('assets/images/profile.png'), // Image from assets
+                backgroundImage: AssetImage(
+                    'assets/images/profile.png'), // Image from assets
               ),
             ),
           ),
           SizedBox(
-            width: 15,
+            width: 10,
           ),
           Container(
             child: Text(
-              'Hello Rudra,',
+              'SwasthSetu',
               style: AppWidget.boldSize25TextStyle(),
             ),
           ),
           Spacer(),
           GestureDetector(
             child: Container(
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  color: Colors.black87, borderRadius: BorderRadius.circular(10)),
-              child: Icon(
-                Icons.search_rounded,
-                color: Colors.white,
-                size: 20,
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget Specialization() {
-    return Container(
-      margin: EdgeInsets.only(top: 20),
-      child: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.only(right: 20, left: 20),
-            child: Row(
-              children: [
-                Text(
-                  'Specializations:',
-                  style: AppWidget.semiBoldSize20TextStyle(),
-                ),
-                Spacer(),
-                Text(
-                  'See More',
-                  style: AppWidget.semiBoldSize18TextStyle(),
-                )
-              ],
-            ),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Container(
-              // This is the card widget for specialization
-              margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
-              child: Row(
-                children: [
-                  CardSpecialization(),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  CardSpecialization(),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  CardSpecialization(),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  CardSpecialization(),
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget CardSpecialization() {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => SpecializationDetails()));
-      },
-      child: Container(
-        decoration: AppWidget.whiteBorderShadowBoxDecoration(),
-        padding: EdgeInsets.all(8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.grey.shade100,
-              ),
-              margin: EdgeInsets.only(left: 5, top: 5, bottom: 5),
-              child: Image.asset(
-                'assets/images/heart.png',
-                height: 140,
-                width: 140,
-                color: Colors.black,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
+                padding:
+                    EdgeInsets.only(top: 12, bottom: 12, left: 10, right: 10),
+                decoration: BoxDecoration(
+                    color: Colors.red, borderRadius: BorderRadius.circular(10)),
                 child: Text(
-              'Cardiology',
-              style: AppWidget.semiBoldSize20TextStyle(),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            )),
-            Container(
-                width: 150,
-                child: Text(
-                  'Heart and blood vessel care',
-                  style: AppWidget.semiBoldSize18TextStyle(),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                  'Emergency',
+                  style: AppWidget.boldSize12TextStyle(),
                 )),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget RecommendedHospital() {
-    return Container(
-      padding: EdgeInsets.only(top: 15, bottom: 15),
-      decoration: AppWidget.whiteBorderShadowBoxDecoration(),
-      margin: EdgeInsets.only(top: 5),
-      child: Column(
-        children: [
-          Container(
-            // This is the information of widget
-            margin: EdgeInsets.only(right: 20, left: 20),
-            child: Row(
-              children: [
-                Text(
-                  'Recommended:',
-                  style: AppWidget.semiBoldSize20TextStyle(),
+  // DraggableScrollableSheet widget for swipe-up feature
+  Widget DragScrollingPage() {
+    return DraggableScrollableSheet(
+      initialChildSize: 0.15,
+      minChildSize: 0.15,
+      maxChildSize: 0.95,
+      builder: (BuildContext context, ScrollController scrollController) {
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black54,
+                blurRadius: 10,
+                offset: Offset(0, -5),
+              ),
+            ],
+          ),
+          child: ListView(
+            controller: scrollController,
+            children: [
+              Center(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(bottom: 10, left: 10, right: 10),
+                  child: Container(
+                    width: 50,
+                    height: 5,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
                 ),
-                Spacer(),
-                Text(
-                  'See More',
-                  style: AppWidget.semiBoldSize18TextStyle(),
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            height: 250, // Height for the parent container
-            child: ListView.builder(
-              itemCount: 8, // Number of list items
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    GestureDetector(
-                      onTap:() {
-                         Navigator.push(context, MaterialPageRoute(builder: (context) => HospitalDetail()));
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.grey.shade50,
-                          // color: Colors.red,
-                        ),
-                        height: 80, // Height for each item
-                        width: double.infinity,
-                        child: Row(
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 16, bottom: 12),
+                child: Text(
+                  'Hello Rudra,',
+                  style: AppWidget.boldSize25TextStyle(),
+                ),
+              ),
+              Container(
+                height: 2,
+                width: MediaQuery.of(context).size.width,
+                color: Colors.black12,
+              ),
+              Expanded(
+                child: Container(
+                  height: 520,
+                  child: ListView(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              margin: EdgeInsets.only(left: 10),
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/images/hospital.jpg'), // Your image
-                                  fit: BoxFit.cover,
+                              margin: EdgeInsets.only(left: 20),
+                              child: Text(
+                                'Specializations:',
+                                style: AppWidget.boldSize20TextStyle(),
+                              ),
+                            ),
+                            Container(
+                              height: 242,
+                              margin: EdgeInsets.only(top: 20, bottom: 20),
+                              child: ListView.builder(
+                                scrollDirection:
+                                    Axis.horizontal, // Scroll horizontally
+                                itemCount: 10, // Number of cards
+                                itemBuilder: (BuildContext context, int index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SpecializationDetails()));
+                                    },
+                                    child: Container(
+                                      margin:
+                                          EdgeInsets.only(left: 10, right: 10),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Colors.blueGrey,
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            height: 132,
+                                            width: 257,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.vertical(
+                                                      top: Radius.circular(20)),
+                                              color: Colors.grey.shade100,
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/hospital1.png'), // Your image
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Container(
+                                              margin: EdgeInsets.only(left: 15),
+                                              // color: Colors.black,
+                                              width: 227,
+                                              child: Text(
+                                                'Cardiology ajjehjheajadfhaj',
+                                                style: AppWidget
+                                                    .semiBoldSize20TextStyle(),
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                              )),
+                                          Container(
+                                              margin: EdgeInsets.only(left: 15),
+                                              // color: Colors.black,
+                                              width: 227,
+                                              child: Text(
+                                                'Heart and blood vessel care. This is for You',
+                                                style: AppWidget
+                                                    .semiBoldSize18TextStyle(),
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                              )),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                            Center(
+                              child: Container(
+                                margin: EdgeInsets.only(bottom: 15),
+                                child: Text(
+                                  'See all',
+                                  style:
+                                      AppWidget.semiBoldBlueSize20TextStyle(),
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
                             Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    width:
-                                        MediaQuery.of(context).size.width / 1.6,
-                                    child: Text(
-                                      'Hospital Name',
-                                      style: AppWidget.semiBoldSize18TextStyle(),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                  Container(
-                                    width:
-                                        MediaQuery.of(context).size.width / 1.6,
-                                    child: Text(
-                                      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                                      style: AppWidget.semiBoldSize16TextStyle(),
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  )
-                                ],
-                              ),
+                              height: 10,
+                              width: MediaQuery.of(context).size.width,
+                              color: Colors.black38,
                             ),
-                            Spacer(),
-                            Container(
-                              margin: EdgeInsets.only(right: 10),
-                              child: Icon(
-                                Icons.more_vert,
-                                size: 28,
-                                color: Colors.black38,
-                              ),
-                            )
                           ],
                         ),
                       ),
-                    ),
-                    if (index > -2)
-                      Divider(), // Divider between items (not after the last item)
-                  ],
-                );
-              },
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget MapNearbyHospital() {
-    return Container(
-      decoration: AppWidget.whiteBorderShadowBoxDecoration(),
-      width: MediaQuery.of(context).size.width,
-      height: 350,
-      margin: EdgeInsets.only(top: 20, bottom: 20),
-      child: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.only(left: 20, right: 20, top: 20),
-            child: Row(
-              children: [
-                Text(
-                  'Nearby Hospital:',
-                  style: AppWidget.semiBoldSize20TextStyle(),
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 20),
+                              child: Text(
+                                'Recommended Hospital:',
+                                style: AppWidget.boldSize20TextStyle(),
+                              ),
+                            ),
+                            Container(
+                              height: 180,
+                              margin: EdgeInsets.only(top: 20, bottom: 20),
+                              child: ListView.builder(
+                                scrollDirection:
+                                    Axis.horizontal, // Scroll horizontally
+                                itemCount: 10, // Number of cards
+                                itemBuilder: (BuildContext context, int index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HospitalDetail()));
+                                    },
+                                    child: Container(
+                                        margin:
+                                            EdgeInsets.only(left: 5, right: 5),
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                1.02,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Colors.black12,
+                                        ),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(top: 15),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Container(
+                                                    padding: EdgeInsets.only(
+                                                        left: 10, bottom: 10),
+                                                    // color: Colors.red,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width /
+                                                            1.5,
+                                                    child: Text(
+                                                      'Hospital Name is place here You can see Hospital Name from here',
+                                                      style: AppWidget
+                                                          .semiBoldSize20HeightTextStyle(),
+                                                      maxLines: 2,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    padding: EdgeInsets.only(
+                                                        left: 10, bottom: 5),
+                                                    child: Row(
+                                                      children: [
+                                                        Container(
+                                                          child: Text(
+                                                            '3.7',
+                                                            style: AppWidget
+                                                                .semiBoldSize16TextStyle(),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          child: Icon(
+                                                            Icons.star,
+                                                            color: Colors.amber,
+                                                            size: 20,
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          child: Icon(
+                                                            Icons.star,
+                                                            color: Colors.amber,
+                                                            size: 20,
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          child: Icon(
+                                                            Icons.star,
+                                                            color: Colors.amber,
+                                                            size: 20,
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          child: Icon(
+                                                            Icons.star,
+                                                            color:
+                                                                Colors.black54,
+                                                            size: 20,
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          child: Icon(
+                                                            Icons.star,
+                                                            color:
+                                                                Colors.black54,
+                                                            size: 20,
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          child: Text(
+                                                            '(287)',
+                                                            style: AppWidget
+                                                                .semiBoldSize16TextStyle(),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    padding: EdgeInsets.only(
+                                                        left: 10, bottom: 5),
+                                                    child: Row(
+                                                      children: [
+                                                        Container(
+                                                          child: Text(
+                                                            'Government Hospital',
+                                                            style: AppWidget
+                                                                .semiBoldSize16TextStyle(),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    padding: EdgeInsets.only(
+                                                        left: 10, bottom: 5),
+                                                    child: Row(
+                                                      children: [
+                                                        Container(
+                                                          child: Text(
+                                                            'Open24 hours',
+                                                            style: AppWidget
+                                                                .semiBoldSize16GreenTextStyle(),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    padding: EdgeInsets.only(
+                                                        left: 10, bottom: 5),
+                                                    child: Row(
+                                                      children: [
+                                                        Container(
+                                                          child: Text(
+                                                            '2.5 km',
+                                                            style: AppWidget
+                                                                .semiBoldSize16TextStyle(),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            Spacer(),
+                                            Container(
+                                              margin: EdgeInsets.only(
+                                                  top: 15, right: 10),
+                                              child: Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Container(
+                                                    padding: EdgeInsets.all(10),
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        shape: BoxShape.circle),
+                                                    child: Icon(Icons.call),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Container(
+                                                    padding: EdgeInsets.all(10),
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        shape: BoxShape.circle),
+                                                    child:
+                                                        Icon(Icons.directions),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        )),
+                                  );
+                                },
+                              ),
+                            ),
+                            Center(
+                              child: Container(
+                                margin: EdgeInsets.only(bottom: 15),
+                                child: Text(
+                                  'See all',
+                                  style:
+                                      AppWidget.semiBoldBlueSize20TextStyle(),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 10,
+                              width: MediaQuery.of(context).size.width,
+                              color: Colors.black38,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-                Spacer(),
-                Text(
-                  'See More',
-                  style: AppWidget.semiBoldSize18TextStyle(),
-                )
-              ],
-            ),
+              ),
+            ],
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.black38,
-            ),
-            height: 250,
-            margin: EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 20),
-            width: MediaQuery.of(context).size.width,
-          )
-        ],
-      ),
+        );
+      },
     );
   }
-
 }

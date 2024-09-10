@@ -17,6 +17,23 @@ class AppWidget {
       color: Colors.black87,
     );
   }
+  static TextStyle boldSize20TextStyle() {
+    return TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w800,
+      fontFamily: 'Nunito-Bold',
+      color: Colors.black87,
+    );
+  }
+
+  static TextStyle semiBoldBlueSize20TextStyle() {
+    return TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w800,
+      fontFamily: 'Nunito-Bold',
+      color: Colors.green.shade800,
+    );
+  }
 
   static TextStyle semiBoldSize20HeightTextStyle() {
     return TextStyle(
@@ -53,6 +70,14 @@ class AppWidget {
         color: Colors.green.shade500,
         height: 1);
   }
+  static TextStyle semiBoldSize16GreenTextStyle() {
+    return TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        fontFamily: 'Nunito-Bold',
+        color: Colors.green.shade500,
+        height: 1);
+  }
 
   static TextStyle semiBoldSize16TextStyle() {
     return TextStyle(
@@ -67,6 +92,14 @@ class AppWidget {
     return TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
+        fontFamily: 'Nunito-Bold',
+        color: Colors.black87,
+        height: 1);
+  }
+  static TextStyle boldSize12TextStyle() {
+    return TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w900,
         fontFamily: 'Nunito-Bold',
         color: Colors.black87,
         height: 1);
