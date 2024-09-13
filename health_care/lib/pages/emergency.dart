@@ -13,7 +13,7 @@ class _EmergencyState extends State<Emergency> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffecefe8),
+      backgroundColor: Color(0xfffffde7),
       body: Container(
         child: Column(
           children: [
@@ -101,7 +101,7 @@ class _EmergencyState extends State<Emergency> {
                     margin: EdgeInsets.only(left: 10, top: 10, bottom: 20),
                     decoration: BoxDecoration(
                       color:
-                          Colors.grey.shade200, // Background color for the box
+                          Colors.white, // Background color for the box
                       borderRadius:
                           BorderRadius.circular(12), // Rounded corners
                       boxShadow: [
@@ -125,7 +125,7 @@ class _EmergencyState extends State<Emergency> {
                     margin: EdgeInsets.only(left: 10, top: 10, bottom: 20),
                     decoration: BoxDecoration(
                       color:
-                          Colors.grey.shade200, // Background color for the box
+                          Colors.white, // Background color for the box
                       borderRadius:
                           BorderRadius.circular(12), // Rounded corners
                       boxShadow: [
@@ -149,7 +149,7 @@ class _EmergencyState extends State<Emergency> {
                     margin: EdgeInsets.only(left: 10, top: 10, bottom: 20),
                     decoration: BoxDecoration(
                       color:
-                          Colors.grey.shade200, // Background color for the box
+                          Colors.white, // Background color for the box
                       borderRadius:
                           BorderRadius.circular(12), // Rounded corners
                       boxShadow: [
@@ -174,7 +174,7 @@ class _EmergencyState extends State<Emergency> {
                         left: 10, top: 10, bottom: 20, right: 10),
                     decoration: BoxDecoration(
                       color:
-                          Colors.grey.shade200, // Background color for the box
+                          Colors.white, // Background color for the box
                       borderRadius:
                           BorderRadius.circular(12), // Rounded corners
                       boxShadow: [
@@ -218,7 +218,7 @@ class _EmergencyState extends State<Emergency> {
           Container(
             margin: EdgeInsets.only(left: 10, right: 10, top: 20),
             decoration: BoxDecoration(
-              color: Colors.grey.shade200,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
@@ -468,4 +468,7 @@ class _EmergencyState extends State<Emergency> {
       ),
     );
   }
+
+  
+
 }

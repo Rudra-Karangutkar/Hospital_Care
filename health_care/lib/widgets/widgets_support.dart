@@ -132,7 +132,7 @@ class AppWidget {
 
   static BoxDecoration greenShadowBoxDecoration() {
     return BoxDecoration(
-      color: const Color.fromARGB(255, 147, 255, 168),
+      color: Colors.blueGrey,
       borderRadius: BorderRadius.circular(10),
       // Shadow to create elevation effect
       boxShadow: [
@@ -147,7 +147,7 @@ class AppWidget {
   }
   static BoxDecoration lightgreenShadowBoxDecoration() {
     return BoxDecoration(
-      color: const Color.fromARGB(255, 235, 251, 240),
+      color: Colors.blueGrey.shade300,
       shape: BoxShape.circle,
       // Shadow to create elevation effect
       boxShadow: [

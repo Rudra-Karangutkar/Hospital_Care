@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_care/pages/chatbot.dart';
 import 'package:health_care/pages/opd.dart';
 import 'package:health_care/pages/emergency.dart';
 import 'package:health_care/pages/market.dart';
@@ -19,7 +20,7 @@ class _BottomNavState extends State<BottomNav> {
   late Home homapage;
   late Opd opdpage;
   late Market marketpage;
-  late Emergency emergencypage;
+  late ChatBot chatbotpage;
 
   @override
   void initState() {
@@ -27,9 +28,9 @@ class _BottomNavState extends State<BottomNav> {
     homapage = Home();
     opdpage = Opd();
     marketpage = Market();
-    emergencypage = Emergency();
+    chatbotpage = ChatBot();
 
-    pages = [homapage, opdpage, marketpage, emergencypage];
+    pages = [homapage, opdpage, marketpage, chatbotpage];
   }
 
   @override
@@ -61,7 +62,7 @@ class _BottomNavState extends State<BottomNav> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outlined),
-              label: 'Emergency',
+              label: 'ChatBot',
             ),
           ],
           selectedItemColor: Colors.white,

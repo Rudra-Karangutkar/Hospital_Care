@@ -12,7 +12,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffecefe8),
+      backgroundColor: Color(0xfffffde7),
       body: Container(
         child: Column(
           children: [
@@ -100,7 +100,7 @@ class _ProfileState extends State<Profile> {
         Container(
           child: CircleAvatar(
             radius: 70,
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.red,
             backgroundImage:
                 AssetImage('assets/images/profile.png'), // Image from assets
           ),
