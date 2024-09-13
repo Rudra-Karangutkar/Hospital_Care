@@ -15,6 +15,7 @@ class _HistoryOpdState extends State<HistoryOpd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: Color(0xffecefe8),
       body: Container(
         child: Column(
           children: [

@@ -39,6 +39,7 @@ class _BookOpdState extends State<BookOpd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: Color(0xffecefe8),
       body: Container(
         child: Column(
           children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_care/pages/emergency.dart';
 import 'package:health_care/pages/hospitaldetails.dart';
 import 'package:health_care/pages/profile.dart';
 import 'package:health_care/pages/specializationdetails.dart';
@@ -15,6 +16,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffecefe8),
       body: Column(
         children: [
           // AppBar
@@ -92,11 +94,8 @@ class _HomeState extends State<Home> {
                 padding:
                     EdgeInsets.only(top: 12, bottom: 12, left: 10, right: 10),
                 decoration: BoxDecoration(
-                    color: Colors.red, borderRadius: BorderRadius.circular(10)),
-                child: Text(
-                  'Emergency',
-                  style: AppWidget.boldSize12TextStyle(),
-                )),
+                    color: Colors.transparent, borderRadius: BorderRadius.circular(10)),
+                ),
           ),
         ],
       ),
@@ -112,7 +111,7 @@ class _HomeState extends State<Home> {
       builder: (BuildContext context, ScrollController scrollController) {
         return Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Color(0xffecefe8),
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
             boxShadow: [
               BoxShadow(
@@ -140,10 +139,50 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 16, bottom: 12),
-                child: Text(
-                  'Hello Rudra,',
-                  style: AppWidget.boldSize25TextStyle(),
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 16, bottom: 15),
+                      child: Text(
+                        'Hello Rudra,',
+                        style: AppWidget.boldSize25TextStyle(),
+                      ),
+                    ),
+                    Spacer(),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Emergency()));
+                      },
+                      child: Container(
+                          margin:
+                              EdgeInsets.only(left: 16, bottom: 15, right: 16),
+                          padding: EdgeInsets.only(
+                              top: 12, bottom: 12, left: 10, right: 10),
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Text(
+                            'Emergency',
+                            style: AppWidget.boldSize12TextStyle(),
+                          )),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10, right: 10, bottom: 10,top: 4),
+                padding: EdgeInsets.only(left: 20),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    color: Color(0xfff5f5f5),
+                    borderRadius: BorderRadius.circular(20)),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Search Hospital',
+                    suffixIcon: Icon(Icons.search),
+                  ),
                 ),
               ),
               Container(
@@ -273,7 +312,7 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                             Container(
-                              height: 180,
+                              height: 190, //180
                               margin: EdgeInsets.only(top: 20, bottom: 20),
                               child: ListView.builder(
                                 scrollDirection:
