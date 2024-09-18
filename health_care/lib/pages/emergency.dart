@@ -254,7 +254,7 @@ class _EmergencyState extends State<Emergency> {
                                   width:
                                       MediaQuery.of(context).size.width / 1.5,
                                   child: Text(
-                                    'Hospital Name is place here You can see Hospital Name from here',
+                                    'Hospital Name',
                                     style: AppWidget
                                         .semiBoldSize20HeightTextStyle(),
                                     maxLines: 2,

@@ -165,7 +165,7 @@ class _OpdState extends State<Opd> {
                       Container(
                         width: MediaQuery.of(context).size.width / 1.5,
                         child: Text(
-                          'Cardiology Department',
+                          'Department',
                           style: AppWidget.semiBoldSize18TextStyle(),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,

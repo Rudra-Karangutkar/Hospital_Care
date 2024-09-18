@@ -149,7 +149,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
                       // color: Colors.red,
                       width: MediaQuery.of(context).size.width / 1.3,
                       child: Text(
-                        'Hospital Name is place here You can see Hospital Name from here',
+                        'Hospital Name',
                         style: AppWidget.semiBoldSize20HeightTextStyle(),
                       ),
                     ),
@@ -161,7 +161,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
                       // color: Colors.red,
                       width: MediaQuery.of(context).size.width / 1.3,
                       child: Text(
-                        'This is your address so you can see your address here',
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
                         style: AppWidget.semiBoldSize18TextStyle(),
                       ),
                     ),
@@ -561,7 +561,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
                   // color: Colors.red,
                   width: MediaQuery.of(context).size.width / 1.40,
                   child: Text(
-                    'This is your address showing here that is so big that why i am write this much paragraph',
+                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
                     style: AppWidget.semiBoldSize18TextStyle(),
                   ),
                 ),
@@ -882,7 +882,7 @@ class _HospitalDetailState extends State<HospitalDetail> {
                         Container(
                           width: MediaQuery.of(context).size.width / 1.2,
                           child: Text(
-                              'This is about of this hospital this can be anything writen here so that why i am writting this much big paragraph here okey so take care.',
+                              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
                               style: AppWidget.semiBoldSize18TextStyle()),
                         ),
                       ],

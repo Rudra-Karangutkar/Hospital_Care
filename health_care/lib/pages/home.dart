@@ -160,7 +160,7 @@ class _HomeState extends State<Home> {
                     Container(
                       margin: EdgeInsets.only(left: 16, bottom: 15),
                       child: Text(
-                        'Hello Rudra,',
+                        'Hello Name,',
                         style: AppWidget.boldSize25TextStyle(),
                       ),
                     ),
@@ -280,7 +280,7 @@ class _HomeState extends State<Home> {
                                   // color: Colors.black,
                                   width: 227,
                                   child: Text(
-                                    'Cardiology ajjehjheajadfhaj',
+                                    'Cardiology',
                                     style: AppWidget.semiBoldSize20TextStyle(),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
@@ -369,7 +369,7 @@ class _HomeState extends State<Home> {
                                             MediaQuery.of(context).size.width /
                                                 1.5,
                                         child: Text(
-                                          'Hospital Name is place here You can see Hospital Name from here',
+                                          'Hospital Name',
                                           style: AppWidget
                                               .semiBoldSize20HeightTextStyle(),
                                           maxLines: 2,

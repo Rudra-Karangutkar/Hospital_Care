@@ -188,7 +188,7 @@ class _SpecializationDetailsState extends State<SpecializationDetails> {
                       // color: Colors.red,
                       width: MediaQuery.of(context).size.width / 1.3,
                       child: Text(
-                        'This is a details about cardiology in short that why i am write it in short okay so this is cardiology',
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
                         style: AppWidget.semiBoldSize18TextStyle(),
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
@@ -303,7 +303,7 @@ class _SpecializationDetailsState extends State<SpecializationDetails> {
                         Container(
                           width: MediaQuery.of(context).size.width / 1.2,
                           child: Text(
-                              'This is about of this hospital this can be anything writen here so that why i am writting this much big paragraph here okey so take care.',
+                              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
                               style: AppWidget.semiBoldSize18TextStyle()),
                         ),
                       ],
@@ -564,7 +564,7 @@ class _SpecializationDetailsState extends State<SpecializationDetails> {
                             // color: Colors.red,
                             width: MediaQuery.of(context).size.width / 1.4,
                             child: Text(
-                              'This is the address of the hospital the are you seeing now this address of nearby hospital of you okay',
+                              'XYZ Hospital, Room 12B, OPD Floor',
                               style: AppWidget.semiBoldSize16TextStyle(),
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
