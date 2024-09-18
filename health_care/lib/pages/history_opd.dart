@@ -11,11 +11,25 @@ class HistoryOpd extends StatefulWidget {
   State<HistoryOpd> createState() => _HistoryOpdState();
 }
 
+// Color.fromARGB(255, 255, 255, 255) white
+// Color.fromARGB(255, 236, 236, 244) dark white
+// Color.fromARGB(255, 250, 249, 254) grey white
+// Color.fromARGB(255, 242, 242, 242) light grey white
+// Color.fromARGB(255, 240, 243, 248) light blue
+// Color.fromARGB(255, 236, 242, 254) light blue button
+// Color.fromARGB(255, 215, 227, 239) light blue button 2
+// Color.fromARGB(255, 211, 227, 253) blue
+// Color.fromARGB(255, 11, 87, 207) dark blue
+// Color.fromARGB(255, 22, 88, 196) dark blue text
+// Color.fromARGB(255, 76, 150, 99) green
+
+
+
 class _HistoryOpdState extends State<HistoryOpd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Color(0xfffffde7),
+       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Container(
         child: Column(
           children: [
@@ -43,6 +57,7 @@ class _HistoryOpdState extends State<HistoryOpd> {
 
   Widget AppBarMain() {
     return Container(
+      color: Color.fromARGB(255, 240, 243, 248),
       margin: EdgeInsets.only(
         top: 20,
       ),
@@ -233,7 +248,7 @@ class _HistoryOpdState extends State<HistoryOpd> {
                     ),
                     Container(
                       child: Text(
-                        'Complete/Cancle',
+                        'Complete/Cancel',
                         style: AppWidget.semiBoldSize16TextStyle(),
                       ),
                     )

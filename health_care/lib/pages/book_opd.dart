@@ -11,6 +11,25 @@ class BookOpd extends StatefulWidget {
   State<BookOpd> createState() => _BookOpdState();
 }
 
+
+
+// Color.fromARGB(255, 255, 255, 255) white
+// Color.fromARGB(255, 236, 236, 244) dark white
+// Color.fromARGB(255, 250, 249, 254) grey white
+// Color.fromARGB(255, 242, 242, 242) light grey white
+// Color.fromARGB(255, 240, 243, 248) light blue
+// Color.fromARGB(255, 236, 242, 254) light blue button
+// Color.fromARGB(255, 215, 227, 239) light blue button 2
+// Color.fromARGB(255, 211, 227, 253) blue
+// Color.fromARGB(255, 11, 87, 207) dark blue
+// Color.fromARGB(255, 22, 88, 196) dark blue text
+// Color.fromARGB(255, 76, 150, 99) green
+
+
+
+
+
+
 class _BookOpdState extends State<BookOpd> {
   
   late Map<DateTime, List<String>> _events;
@@ -39,7 +58,7 @@ class _BookOpdState extends State<BookOpd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Color(0xfffffde7),
+       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Container(
         child: Column(
           children: [
@@ -69,7 +88,7 @@ class _BookOpdState extends State<BookOpd> {
 
   Widget AppBarMain() {
     return Container(
-      // color: Colors.blue,
+      color: Color.fromARGB(255, 240, 243, 248),
       padding: EdgeInsets.only(top: 40, right: 20, bottom: 20),
       child: Row(
         children: [
@@ -118,7 +137,7 @@ class _BookOpdState extends State<BookOpd> {
     return Container(
       margin: EdgeInsets.only(top: 20, left: 10, right: 10),
       padding: EdgeInsets.only(right: 20, left: 20, top: 10),
-      decoration: AppWidget.whiteBorderShadowBoxDecoration(),
+      decoration: AppWidget.buttonBorderShadowBoxDecoration(),
       child: Column(
         children: [
           Container(
@@ -146,7 +165,7 @@ class _BookOpdState extends State<BookOpd> {
     return Container(
       margin: EdgeInsets.only(bottom: 20, top: 10),
       decoration: BoxDecoration(
-          color: Colors.grey.shade100, borderRadius: BorderRadius.circular(20)),
+          color: Color.fromARGB(255, 242, 242, 242), borderRadius: BorderRadius.circular(20)),
       padding: EdgeInsets.only(right: 10, left: 10),
       child: TableCalendar(
         firstDay: DateTime.utc(2020, 1, 1),
@@ -225,7 +244,7 @@ class _BookOpdState extends State<BookOpd> {
   Widget AppSlots(time) {
     return Container(
       margin: EdgeInsets.only(right: 20),
-      decoration: AppWidget.whiteBorderShadowBoxDecoration(),
+      decoration: AppWidget.buttonBorderShadowBoxDecoration(),
       padding: EdgeInsets.all(8),
       child: Text(
         '$time',
@@ -273,7 +292,7 @@ class _BookOpdState extends State<BookOpd> {
   Widget AppAppointment() {
     return Container(
       margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-      decoration: AppWidget.whiteBorderShadowBoxDecoration(),
+      decoration: AppWidget.buttonBorderShadowBoxDecoration(),
       height: 80,
       width: MediaQuery.of(context).size.width,
       child: Row(

@@ -9,11 +9,23 @@ class Emergency extends StatefulWidget {
   State<Emergency> createState() => _EmergencyState();
 }
 
+// Color.fromARGB(255, 255, 255, 255) white
+// Color.fromARGB(255, 236, 236, 244) dark white
+// Color.fromARGB(255, 250, 249, 254) grey white
+// Color.fromARGB(255, 242, 242, 242) light grey white
+// Color.fromARGB(255, 240, 243, 248) light blue
+// Color.fromARGB(255, 236, 242, 254) light blue button
+// Color.fromARGB(255, 215, 227, 239) light blue button 2
+// Color.fromARGB(255, 211, 227, 253) blue
+// Color.fromARGB(255, 11, 87, 207) dark blue
+// Color.fromARGB(255, 22, 88, 196) dark blue text
+// Color.fromARGB(255, 76, 150, 99) green
+
 class _EmergencyState extends State<Emergency> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffffde7),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Container(
         child: Column(
           children: [
@@ -44,7 +56,7 @@ class _EmergencyState extends State<Emergency> {
 
   Widget AppBarMain() {
     return Container(
-      margin: EdgeInsets.only(top: 20, right: 20, left: 20),
+      padding: EdgeInsets.only(top: 20, right: 20, left: 20),
       child: Row(
         children: [
           Container(
@@ -86,7 +98,7 @@ class _EmergencyState extends State<Emergency> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.only(left: 20),
+            margin: EdgeInsets.only(left: 20,top: 20),
             child: Text(
               'Select Age:',
               style: AppWidget.boldSize20TextStyle(),
@@ -100,19 +112,9 @@ class _EmergencyState extends State<Emergency> {
                   Container(
                     margin: EdgeInsets.only(left: 10, top: 10, bottom: 20),
                     decoration: BoxDecoration(
-                      color:
-                          Colors.white, // Background color for the box
+                      color: Color.fromARGB(255, 211, 227, 253), // Background color for the box
                       borderRadius:
                           BorderRadius.circular(12), // Rounded corners
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.3), // Shadow color
-                          spreadRadius: 3, // Spread of the shadow
-                          blurRadius: 7, // Blur radius of the shadow
-                          offset: Offset(0,
-                              3), // Vertical and horizontal offset of the shadow
-                        ),
-                      ],
                     ),
                     padding: EdgeInsets.all(10), // Padding inside the container
                     child: Text(
@@ -124,19 +126,9 @@ class _EmergencyState extends State<Emergency> {
                   Container(
                     margin: EdgeInsets.only(left: 10, top: 10, bottom: 20),
                     decoration: BoxDecoration(
-                      color:
-                          Colors.white, // Background color for the box
+                      color: Color.fromARGB(255, 211, 227, 253), // Background color for the box
                       borderRadius:
                           BorderRadius.circular(12), // Rounded corners
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.3), // Shadow color
-                          spreadRadius: 3, // Spread of the shadow
-                          blurRadius: 7, // Blur radius of the shadow
-                          offset: Offset(0,
-                              3), // Vertical and horizontal offset of the shadow
-                        ),
-                      ],
                     ),
                     padding: EdgeInsets.all(10), // Padding inside the container
                     child: Text(
@@ -148,19 +140,9 @@ class _EmergencyState extends State<Emergency> {
                   Container(
                     margin: EdgeInsets.only(left: 10, top: 10, bottom: 20),
                     decoration: BoxDecoration(
-                      color:
-                          Colors.white, // Background color for the box
+                      color: Color.fromARGB(255, 211, 227, 253), // Background color for the box
                       borderRadius:
                           BorderRadius.circular(12), // Rounded corners
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.3), // Shadow color
-                          spreadRadius: 3, // Spread of the shadow
-                          blurRadius: 7, // Blur radius of the shadow
-                          offset: Offset(0,
-                              3), // Vertical and horizontal offset of the shadow
-                        ),
-                      ],
                     ),
                     padding: EdgeInsets.all(10), // Padding inside the container
                     child: Text(
@@ -173,19 +155,9 @@ class _EmergencyState extends State<Emergency> {
                     margin: EdgeInsets.only(
                         left: 10, top: 10, bottom: 20, right: 10),
                     decoration: BoxDecoration(
-                      color:
-                          Colors.white, // Background color for the box
+                      color: Color.fromARGB(255, 211, 227, 253), // Background color for the box
                       borderRadius:
                           BorderRadius.circular(12), // Rounded corners
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.3), // Shadow color
-                          spreadRadius: 3, // Spread of the shadow
-                          blurRadius: 7, // Blur radius of the shadow
-                          offset: Offset(0,
-                              3), // Vertical and horizontal offset of the shadow
-                        ),
-                      ],
                     ),
                     padding: EdgeInsets.all(10), // Padding inside the container
                     child: Text(
@@ -218,16 +190,8 @@ class _EmergencyState extends State<Emergency> {
           Container(
             margin: EdgeInsets.only(left: 10, right: 10, top: 20),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Color.fromARGB(255, 242, 242, 242),
               borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
-                  spreadRadius: 3,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // Changes the position of the shadow
-                ),
-              ],
             ),
             child: TextField(
               maxLines: 8, // Allows multi-line input
@@ -245,7 +209,7 @@ class _EmergencyState extends State<Emergency> {
 
   Widget NearbyHospitalMain() {
     return Container(
-        margin: EdgeInsets.only(top: 20),
+        margin: EdgeInsets.only(top: 20,bottom: 10),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
             margin: EdgeInsets.only(left: 20),
@@ -273,7 +237,7 @@ class _EmergencyState extends State<Emergency> {
                       width: MediaQuery.of(context).size.width / 1.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.black12,
+                        color: Color.fromARGB(140, 211, 227, 253),
                       ),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -441,7 +405,7 @@ class _EmergencyState extends State<Emergency> {
             margin: EdgeInsets.only(bottom: 30),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueGrey, // Red background color
+                backgroundColor: Color.fromARGB(255, 11, 87, 207), // Red background color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10), // Rounded corners
                 ),
@@ -452,7 +416,7 @@ class _EmergencyState extends State<Emergency> {
                 // Your submit action here
               },
               child: Padding(
-                padding: const EdgeInsets.only(left: 35,right: 35),
+                padding: const EdgeInsets.only(left: 35, right: 35),
                 child: Text(
                   'Submit',
                   style: TextStyle(
@@ -468,7 +432,4 @@ class _EmergencyState extends State<Emergency> {
       ),
     );
   }
-
-  
-
 }

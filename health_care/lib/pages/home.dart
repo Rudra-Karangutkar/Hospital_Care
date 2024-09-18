@@ -12,11 +12,26 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
+// Color.fromARGB(255, 255, 255, 255) white
+// Color.fromARGB(255, 236, 236, 244) dark white
+// Color.fromARGB(255, 250, 249, 254) grey white
+// Color.fromARGB(255, 242, 242, 242) light grey white
+// Color.fromARGB(255, 240, 243, 248) light blue
+// Color.fromARGB(255, 236, 242, 254) light blue button
+// Color.fromARGB(255, 215, 227, 239) light blue button 2
+// Color.fromARGB(255, 211, 227, 253) blue
+// Color.fromARGB(255, 11, 87, 207) dark blue
+// Color.fromARGB(255, 22, 88, 196) dark blue text
+// Color.fromARGB(255, 76, 150, 99) green
+
+
+
+
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffffde7),
+      backgroundColor: Color.fromARGB(255, 240, 243, 248),
       body: Column(
         children: [
           // AppBar
@@ -112,7 +127,7 @@ class _HomeState extends State<Home> {
       builder: (BuildContext context, ScrollController scrollController) {
         return Container(
           decoration: BoxDecoration(
-            color: Color(0xfffffde7),
+            color: Color.fromARGB(255, 255, 255, 255),
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
             boxShadow: [
               BoxShadow(
@@ -179,7 +194,7 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.only(left: 20),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 224, 222, 222),
+                    color: Color.fromARGB(255, 242, 242, 242),
                     borderRadius: BorderRadius.circular(20)),
                 child: TextField(
                   decoration: InputDecoration(
@@ -238,7 +253,7 @@ class _HomeState extends State<Home> {
                           margin: EdgeInsets.only(left: 10, right: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Colors.blueGrey,
+                            color: Color.fromARGB(255, 236, 242, 254),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -299,7 +314,7 @@ class _HomeState extends State<Home> {
                 Container(
                   height: 10,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.black38,
+                  color: Color.fromARGB(255, 242, 242, 242),
                 ),
               ],
             ),
@@ -335,7 +350,7 @@ class _HomeState extends State<Home> {
                             width: MediaQuery.of(context).size.width / 1.02,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: Colors.black12,
+                              color: Color.fromARGB(255, 236, 242, 254),
                             ),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -511,7 +526,7 @@ class _HomeState extends State<Home> {
                 Container(
                   height: 10,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.black38,
+                  color: Color.fromARGB(255, 242, 242, 242),
                 ),
               ],
             ),

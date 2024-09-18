@@ -14,6 +14,26 @@ class SpecializationDetails extends StatefulWidget {
   State<SpecializationDetails> createState() => _SpecializationDetailsState();
 }
 
+
+
+
+// Color.fromARGB(255, 255, 255, 255) white
+// Color.fromARGB(255, 236, 236, 244) dark white
+// Color.fromARGB(255, 250, 249, 254) grey white
+// Color.fromARGB(255, 242, 242, 242) light grey white
+// Color.fromARGB(255, 240, 243, 248) light blue
+// Color.fromARGB(255, 236, 242, 254) light blue button
+// Color.fromARGB(255, 215, 227, 239) light blue button 2
+// Color.fromARGB(255, 211, 227, 253) blue
+// Color.fromARGB(255, 11, 87, 207) dark blue
+// Color.fromARGB(255, 22, 88, 196) dark blue text
+// Color.fromARGB(255, 76, 150, 99) green
+
+
+
+
+
+
 class _SpecializationDetailsState extends State<SpecializationDetails> {
   int _selectedIndex = 0;
 
@@ -32,6 +52,7 @@ class _SpecializationDetailsState extends State<SpecializationDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Container(
         child: Column(
           children: [
@@ -69,7 +90,7 @@ class _SpecializationDetailsState extends State<SpecializationDetails> {
 
   Widget AppBarMain() {
     return Container(
-      // color: Colors.blue,
+      color: Color.fromARGB(255, 240, 243, 248),
       padding: EdgeInsets.only(top: 40, right: 20, bottom: 20),
       child: Row(
         children: [
@@ -511,7 +532,7 @@ class _SpecializationDetailsState extends State<SpecializationDetails> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Colors.grey.shade100,
+                          color:    Color.fromARGB(255, 242, 242, 242),
                           borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.all(15),
                       margin: EdgeInsets.only(top: 20),
@@ -644,7 +665,7 @@ class _SpecializationDetailsState extends State<SpecializationDetails> {
     // Now this widget is not using because of that list but you need use this then
     return Container(
       decoration: BoxDecoration(
-          color: Colors.grey.shade100, borderRadius: BorderRadius.circular(10)),
+          color:  Color.fromARGB(255, 240, 243, 248), borderRadius: BorderRadius.circular(10)),
       padding: EdgeInsets.all(15),
       margin: EdgeInsets.only(top: 20),
       child: Column(
@@ -881,13 +902,16 @@ class _SpecializationDetailsState extends State<SpecializationDetails> {
 
               // Send Request Button
               Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Handle Send Request action
-                  },
-                  child: Text('Send Request'),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                child: Container(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Handle Send Request action
+                    },
+                    child: Text('Send Request', style:AppWidget.lightSemiBoldSize18WhiteTextStyle(),),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 11, 87, 207),
+                      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                    ),
                   ),
                 ),
               ),

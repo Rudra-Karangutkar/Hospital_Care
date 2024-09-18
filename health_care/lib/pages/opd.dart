@@ -11,11 +11,28 @@ class Opd extends StatefulWidget {
   State<Opd> createState() => _OpdState();
 }
 
+
+// Color.fromARGB(255, 255, 255, 255) white
+// Color.fromARGB(255, 236, 236, 244) dark white
+// Color.fromARGB(255, 250, 249, 254) grey white
+// Color.fromARGB(255, 242, 242, 242) light grey white
+// Color.fromARGB(255, 240, 243, 248) light blue
+// Color.fromARGB(255, 236, 242, 254) light blue button
+// Color.fromARGB(255, 215, 227, 239) light blue button 2
+// Color.fromARGB(255, 211, 227, 253) blue
+// Color.fromARGB(255, 11, 87, 207) dark blue
+// Color.fromARGB(255, 22, 88, 196) dark blue text
+// Color.fromARGB(255, 76, 150, 99) green
+
+
+
+
+
 class _OpdState extends State<Opd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffffde7),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Container(
         child: Column(
           children: [
@@ -43,6 +60,7 @@ class _OpdState extends State<Opd> {
 
   Widget AppBarMain() {
     return Container(
+      color: Color.fromARGB(255, 240, 243, 248),
       margin: EdgeInsets.only(
         top: 20,
       ),
@@ -162,7 +180,7 @@ class _OpdState extends State<Opd> {
           Container(
             padding: EdgeInsets.only(top: 20, left: 10, right: 10, bottom: 20),
             decoration: BoxDecoration(
-                color: Colors.grey.shade100,
+                color: Color.fromARGB(255, 250, 249, 254),
                 borderRadius: BorderRadius.circular(20)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

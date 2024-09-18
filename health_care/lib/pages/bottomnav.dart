@@ -65,9 +65,9 @@ class _BottomNavState extends State<BottomNav> {
               label: 'ChatBot',
             ),
           ],
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.grey,
-          backgroundColor: Colors.black,
+          selectedItemColor: Color.fromARGB(255, 22, 88, 196),
+          unselectedItemColor: Color.fromARGB(255, 108, 108, 109),
+          backgroundColor: Color.fromARGB(255, 240, 243, 248),
           type: BottomNavigationBarType.fixed, // Ensures consistent styling across all items
         ),
       ),

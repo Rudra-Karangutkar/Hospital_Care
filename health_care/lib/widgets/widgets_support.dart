@@ -31,7 +31,7 @@ class AppWidget {
       fontSize: 20,
       fontWeight: FontWeight.w800,
       fontFamily: 'Nunito-Bold',
-      color: Colors.green.shade800,
+      color: Color.fromARGB(255, 76, 150, 99),
     );
   }
 
@@ -59,6 +59,14 @@ class AppWidget {
         fontWeight: FontWeight.w500,
         fontFamily: 'Nunito-Bold',
         color: Colors.black38,
+        height: 1);
+  }
+  static TextStyle lightSemiBoldSize18WhiteTextStyle() {
+    return TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        fontFamily: 'Nunito-Bold',
+        color: Colors.white,
         height: 1);
   }
 
@@ -107,57 +115,37 @@ class AppWidget {
 
   static BoxDecoration whiteBorderShadowBoxDecoration() {
     return BoxDecoration(
-      color: Colors.grey.shade50,
+      color:  Color.fromARGB(255, 236, 236, 244),
       borderRadius: BorderRadius.circular(15),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.2), // Soft shadow
-          spreadRadius: 5,
-          blurRadius: 10,
-          offset: Offset(0, 3), // Shadow position
-        ),
-      ],
-      border: Border.all(
-        color: Colors.grey.withOpacity(0.3), // Subtle border
-        width: 1,
-      ),
+    );
+  }
+
+  static BoxDecoration buttonBorderShadowBoxDecoration() {
+    return BoxDecoration(
+      color:  Color.fromARGB(255, 236, 236, 244),
+      borderRadius: BorderRadius.circular(15),
     );
   }
   static BoxDecoration whiteBoxDecoration() {
     return BoxDecoration(
-      color: Colors.grey.shade300,
+      color: Color.fromARGB(255, 215, 227, 239),
       borderRadius: BorderRadius.circular(30),
     );
   }
 
   static BoxDecoration greenShadowBoxDecoration() {
     return BoxDecoration(
-      color: Colors.blueGrey,
+      color: Color.fromARGB(255, 211, 227, 253),
       borderRadius: BorderRadius.circular(10),
       // Shadow to create elevation effect
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.15), // Subtle shadow color
-          spreadRadius: 2, // Spread of the shadow
-          blurRadius: 10, // Soften the shadow to blend with background
-          offset: Offset(2, 4), // Position the shadow for elevation effect
-        ),
-      ],
     );
   }
   static BoxDecoration lightgreenShadowBoxDecoration() {
     return BoxDecoration(
-      color: Colors.blueGrey.shade300,
+      color: Color.fromARGB(255, 236, 242, 254),
       shape: BoxShape.circle,
       // Shadow to create elevation effect
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.15), // Subtle shadow color
-          spreadRadius: 2, // Spread of the shadow
-          blurRadius: 10, // Soften the shadow to blend with background
-          offset: Offset(2, 4), // Position the shadow for elevation effect
-        ),
-      ],
+     
     );
   }
 }
